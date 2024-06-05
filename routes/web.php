@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\MovieController;
+use App\Http\Controllers\ShowTimeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +20,7 @@ Route::get('/', function () {
 });
 
 Route::resource('admin/movies', MovieController::class);
+Route::resource('admin/showtimes', ShowTimeController::class);
 
 Auth::routes();
 

@@ -35,9 +35,14 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
+                        @if (auth()->user() != null)
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('movies.index') }}">Movies</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('showtimes.index') }}">Show Times</a>
+                        </li>
+                        @endif
                     </ul>
 
                     <!-- Right Side Of Navbar -->

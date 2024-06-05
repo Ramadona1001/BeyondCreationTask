@@ -9,4 +9,5 @@ class ShowTime extends Model
 {
     use HasFactory;
     protected $guarded = [];
+    protected $table = 'showtimes';
 }
