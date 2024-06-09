@@ -42,6 +42,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('showtimes.index') }}">Show Times</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('eventdays.index') }}">Event Days</a>
+                        </li>
                         @endif
                     </ul>
 

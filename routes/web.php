@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EventDayController;
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\ShowTimeController;
 use Illuminate\Support\Facades\Route;
@@ -21,6 +22,7 @@ Route::get('/', function () {
 
 Route::resource('admin/movies', MovieController::class);
 Route::resource('admin/showtimes', ShowTimeController::class);
+Route::resource('admin/eventdays', EventDayController::class);
 
 Auth::routes();
 
