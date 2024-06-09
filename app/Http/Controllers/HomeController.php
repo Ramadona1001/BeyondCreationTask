@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Attendee;
+use App\Models\EventDay;
+use App\Models\Movie;
+use App\Models\ShowTime;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +27,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $movies_count = Movie::count();
+        $show_times_count = ShowTime::count();
+        $event_days_count = EventDay::count();
+        $attendees_count = Attendee::count();
+        return view('home',compact(
+            'movies_count',
+            'show_times_count',
+            'event_days_count',
+            'attendees_count',
+        ));
     }
 }

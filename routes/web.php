@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AttendeeController;
 use App\Http\Controllers\EventDayController;
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\ShowTimeController;
@@ -23,6 +24,7 @@ Route::get('/', function () {
 Route::resource('admin/movies', MovieController::class);
 Route::resource('admin/showtimes', ShowTimeController::class);
 Route::resource('admin/eventdays', EventDayController::class);
+Route::resource('admin/attendees', AttendeeController::class);
 
 Auth::routes();
 
