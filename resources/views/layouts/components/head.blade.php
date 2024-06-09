@@ -16,5 +16,14 @@
 
     <!-- Custom styles for this template-->
     <link href="{{ asset('assets') }}/css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.css">
 
+    <style>
+        table,
+        th,
+        td,
+        tr {
+            text-align: center !important;
+        }
+    </style>
 </head>

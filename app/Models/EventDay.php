@@ -14,4 +14,9 @@ class EventDay extends Model
     {
         return $this->hasMany(EventDayShowtime::class);
     }
+
+    public function eventDayShowtimes()
+    {
+        return $this->hasMany(EventDayShowtime::class);
+    }
 }

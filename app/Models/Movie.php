@@ -10,4 +10,9 @@ class Movie extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    public function eventDayShowtimes()
+{
+    return $this->hasMany(EventDayShowtime::class);
+}
 }

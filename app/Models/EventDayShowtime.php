@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class EventDayShowtime extends Model
 {
     use HasFactory;
+
     protected $guarded = [];
 
     public function eventDay()
@@ -15,13 +16,13 @@ class EventDayShowtime extends Model
         return $this->belongsTo(EventDay::class);
     }
 
-    public function showtime()
-    {
-        return $this->belongsTo(Showtime::class);
-    }
-
     public function movie()
     {
         return $this->belongsTo(Movie::class);
+    }
+
+    public function showtime()
+    {
+        return $this->belongsTo(Showtime::class);
     }
 }

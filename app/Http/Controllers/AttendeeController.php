@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Attendee;
+use App\Models\EventDay;
+use App\Models\Movie;
+use App\Models\ShowTime;
 use Illuminate\Http\Request;
 
 class AttendeeController extends Controller
@@ -25,7 +28,10 @@ class AttendeeController extends Controller
      */
     public function create()
     {
-        return view('attendees.create');
+        $eventDays = EventDay::all();
+        $movies = Movie::all();
+        $showtimes = ShowTime::all();
+        return view('attendees.create', compact('eventDays', 'movies', 'showtimes'));
     }
 
     /**
@@ -41,24 +47,22 @@ class AttendeeController extends Controller
             'name' => 'required|string|max:255',
             'mobile' => 'required|string|max:20',
             'email' => 'required|string|email|max:255',
-            // Add validation rules for other fields
+            'event_day_id' => 'required|exists:event_days,id',
+            'movie_id' => 'required|exists:movies,id',
+            'showtime_id' => 'required|exists:showtimes,id',
         ]);
 
-        // Create a new attendee instance
-        $attendee = new Attendee([
-            'name' => $request->name,
-            'mobile' => $request->mobile,
-            'email' => $request->email,
-            // Assign other request data to attendee attributes
-        ]);
-
-        // Save the attendee to the database
+        $attendee = new Attendee();
+        $attendee->name = $request->name;
+        $attendee->mobile = $request->mobile;
+        $attendee->email = $request->email;
+        $attendee->event_day_id = $request->event_day_id;
+        $attendee->movie_id = $request->movie_id;
+        $attendee->showtime_id = $request->showtime_id;
         $attendee->save();
 
         return redirect()->route('attendees.index')
             ->with('success', 'Attendee created successfully.');
     }
-
-    // Implement other methods like show(), edit(), update(), destroy() as needed
 }
 

@@ -1,4 +1,4 @@
-<script src="{{ asset('assets') }}/vendor/jquery/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="{{ asset('assets') }}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Core plugin JavaScript-->
@@ -15,26 +15,26 @@
 <script src="{{ asset('assets') }}/js/demo/chart-pie-demo.js"></script>
 
 
-    <script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    new DataTable('#example');
+</script>
+@if (Session::has('success'))
     <script>
-        new DataTable('#example');
+        Swal.fire({
+            title: "Success",
+            text: "{{ Session::get('success') }}",
+            icon: "success"
+        });
     </script>
-    @if (Session::has('success'))
-        <script>
-            Swal.fire({
-                title: "Success",
-                text: "{{ Session::get('success') }}",
-                icon: "success"
-            });
-        </script>
-    @endif
-    @if (Session::has('error'))
-        <script>
-            Swal.fire({
-                title: "Error",
-                text: "{{ Session::get('error') }}",
-                icon: "error"
-            });
-        </script>
-    @endif
+@endif
+@if (Session::has('error'))
+    <script>
+        Swal.fire({
+            title: "Error",
+            text: "{{ Session::get('error') }}",
+            icon: "error"
+        });
+    </script>
+@endif

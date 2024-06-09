@@ -37,6 +37,11 @@
             <span>Event Days</span></a>
     </li>
     <li class="nav-item">
+        <a class="nav-link" href="{{ route('event-times.index') }}">
+            <i class="fas fa-fw fa-list"></i>
+            <span>Event Time Show</span></a>
+    </li>
+    <li class="nav-item">
         <a class="nav-link" href="{{ route('attendees.index') }}">
             <i class="fas fa-fw fa-list"></i>
             <span>Attendees</span></a>
