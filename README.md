@@ -53,6 +53,9 @@ php artisan serve
 
 ```
 http://127.0.0.1:8000
+For Admin user
+email : admin@admin.com
+password : password
 ```
 
 <h2>🍰 Contribution Guidelines:</h2>
